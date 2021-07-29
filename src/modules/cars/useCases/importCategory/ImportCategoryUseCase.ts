@@ -1,14 +1,18 @@
 import fs from "fs";
 import csvParse from "csv-parse";
-import { ICategoriesRepository } from "../../repositories/implementations/ICategoriesRepository";
+import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
+import { inject, injectable } from "tsyringe";
 
 interface IImportCategory {
     name: string;
     description: string;
 }
 
+@injectable()
 class ImportCategoryUseCase {
-    constructor(private categoriesRepository: ICategoriesRepository) {
+    constructor(
+        @inject("CategoriesRepository")
+        private categoriesRepository: ICategoriesRepository) {
 
     }
 
