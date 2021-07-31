@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { container } from "tsyringe";
+import { container, injectable } from "tsyringe";
 import { ListSpecificationsUseCase } from "./ListSpecificationsUseCase";
 
 
