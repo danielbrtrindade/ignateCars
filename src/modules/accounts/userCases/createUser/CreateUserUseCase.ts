@@ -1,7 +1,7 @@
 import { ICreateUserDTO } from "@modules/accounts/repositories/dtos/ICreateUserDTO";
 import { IUserRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { AppError } from "@shared/errors/AppError";
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 import { inject, injectable } from "tsyringe";
 
 

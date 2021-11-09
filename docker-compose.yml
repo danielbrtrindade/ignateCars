@@ -3,7 +3,7 @@ version: "3.9"
 services:
   database:
     image: postgres
-    container_name: database_ignite2
+    container_name: database
     restart: always
     ports: 
       - 5432:5432
