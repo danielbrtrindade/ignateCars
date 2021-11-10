@@ -10,6 +10,7 @@ interface ISpecificationsRepository {
     create({ name, description }: ICreateSpecificationDTO): Promise<void>;
     list(): Promise<Specification[]>;
     findByName(name: string): Promise<Specification | undefined>;
+    findByIds(ids: string[]): Promise<Specification[] | undefined>;
 }
 
 export { ISpecificationsRepository, ICreateSpecificationDTO }
