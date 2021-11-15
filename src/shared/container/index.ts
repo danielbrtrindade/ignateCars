@@ -6,10 +6,13 @@ import { SpecificationsRepository } from "@modules/cars/infra/typeorm/repositori
 import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
-import { IRentalsRepository } from "@modules/rentals/infra/typeorm/repositories/IRentalsRepository";
+import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository";
+import { IRentalsRepository } from "@modules/rentals/useCases/repositories/IRentalsRepository";
 import { container } from "tsyringe";
 import { CategoriesRepository } from "../../modules/cars/infra/typeorm/repositories/CategoriesRepository";
 import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
+import "@shared/container/providers";
+
 container.registerSingleton<ICategoriesRepository>(
     "CategoriesRepository",
     CategoriesRepository

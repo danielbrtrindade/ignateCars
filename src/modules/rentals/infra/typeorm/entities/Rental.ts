@@ -1,6 +1,6 @@
 import { User } from "@modules/accounts/infra/typeorm/entities/User";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
-import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
 
@@ -38,7 +38,7 @@ class Rental {
     @CreateDateColumn()
     created_at!: Date;
 
-    @CreateDateColumn()
+    @UpdateDateColumn()
     updated_at!: Date;
 
     constructor() {
