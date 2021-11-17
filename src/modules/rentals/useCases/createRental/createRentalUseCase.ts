@@ -16,21 +16,21 @@ class CreateRentalUseCase {
 
     constructor(
         @inject("RentalsRepository")
-        private rentalRepository: IRentalsRepository,
+        private rentalsRepository: IRentalsRepository,
         @inject("DayjsDataProvider")
         private dateProvider: IDateProvider,
         @inject("CarsRepository")
         private carsRepository: ICarsRepository
     ) { }
     async execute({ user_id, car_id, expected_return_date }: IRequest): Promise<Rental> {
-        const carUnavailable = await this.rentalRepository.findOpenRentalByCar(car_id);
+        const carUnavailable = await this.rentalsRepository.findOpenRentalByCar(car_id);
         const minimumHour = 24;
 
         if (carUnavailable) {
             throw new AppError("Car is unavailable");
         }
 
-        const rentalOpenToUser = await this.rentalRepository.findOpenRentalByUser(user_id);
+        const rentalOpenToUser = await this.rentalsRepository.findOpenRentalByUser(user_id);
 
         if (rentalOpenToUser) {
             throw new AppError("There is a rental in progress for user!");
@@ -47,7 +47,7 @@ class CreateRentalUseCase {
             throw new AppError("Invalid return time!");
         }
 
-        const rental = this.rentalRepository.create({
+        const rental = this.rentalsRepository.create({
             user_id,
             car_id,
             expected_return_date,
