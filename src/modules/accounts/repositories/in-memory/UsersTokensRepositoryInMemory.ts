@@ -1,6 +1,6 @@
 import { UserTokens } from "@modules/accounts/infra/typeorm/entities/UserTokens";
 import { AppError } from "@shared/errors/AppError";
-import { ICreateUserTokenDTO } from "../dtos/ICreateUserTokenDTO";
+import { ICreateUserTokenDTO } from "../../dtos/ICreateUserTokenDTO";
 import { IUsersTokensRepository } from "../IUsersTokensRepository";
 
 

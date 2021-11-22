@@ -1,5 +1,5 @@
 import { UsersTokensRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokensRepository";
-import { ICreateUserDTO } from "@modules/accounts/repositories/dtos/ICreateUserDTO";
+import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
 import { UsersRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UserRepositoryInMemory";
 import { UsersTokensRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersTokensRepositoryInMemory";
 import { DayjsDataProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDataProvider";

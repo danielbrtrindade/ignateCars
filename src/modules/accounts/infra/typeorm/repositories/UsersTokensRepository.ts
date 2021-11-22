@@ -1,4 +1,4 @@
-import { ICreateUserTokenDTO } from "@modules/accounts/repositories/dtos/ICreateUserTokenDTO";
+import { ICreateUserTokenDTO } from "@modules/accounts/dtos/ICreateUserTokenDTO";
 import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
 import { getRepository, Repository } from "typeorm";
 import { UserTokens } from "../entities/UserTokens";
