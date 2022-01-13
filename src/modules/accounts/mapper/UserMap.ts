@@ -1,8 +1,6 @@
 import { IUserResponseDTO } from "../dtos/IUserResponseDTO";
 import { User } from "../infra/typeorm/entities/User";
 
-
-
 class UserMap {
 
     static toDTO({
@@ -10,15 +8,17 @@ class UserMap {
         name,
         id,
         avatar,
-        driver_license
+        driver_license,
+        avatar_url
     }: User): IUserResponseDTO {
         return {
             email,
             name,
             id,
             avatar,
-            driver_license
-        }
+            driver_license,
+            avatar_url
+        };
     }
 }
 
