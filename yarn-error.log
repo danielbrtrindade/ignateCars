@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /home/danieltrindade/.yarn/releases/yarn-1.22.10.cjs add @types/mine -D
+  /usr/local/bin/node /home/danieltrindade/.yarn/releases/yarn-1.22.10.cjs add @babel/cli @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/preset-env @babel/plugin-module-resolver @babel/plugin-transform-typescript-metadata -D
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fmine: Not found
+  Error: https://registry.yarnpkg.com/@babel%2fplugin-module-resolver: Not found
       at Request.params.callback [as _callback] (/home/danieltrindade/.yarn/releases/yarn-1.22.10.cjs:78518:18)
       at Request.self.callback (/home/danieltrindade/.yarn/releases/yarn-1.22.10.cjs:135160:22)
       at Request.emit (events.js:375:28)
@@ -41,12 +41,15 @@ npm manifest:
     "dependencies": {
       "aws-sdk": "^2.1033.0",
       "bcryptjs": "^2.4.3",
+      "class-transformer": "^0.5.0",
       "csv-parse": "^4.16.0",
       "dayjs": "^1.10.7",
+      "dotenv": "^10.0.0",
       "express": "^4.17.1",
       "express-async-errors": "^3.1.1",
       "handlebars": "^4.7.7",
       "jsonwebtoken": "^8.5.1",
+      "mime": "^3.0.0",
       "mine": "^0.1.0",
       "multer": "^1.4.2",
       "nodemailer": "^6.7.1",
@@ -63,6 +66,7 @@ npm manifest:
       "@types/express": "^4.17.13",
       "@types/jest": "^27.0.2",
       "@types/jsonwebtoken": "^8.5.4",
+      "@types/mime": "^2.0.3",
       "@types/multer": "^1.4.7",
       "@types/nodemailer": "^6.4.4",
       "@types/supertest": "^2.0.11",
@@ -796,6 +800,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
     integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
   
+  "@types/mime@^2.0.3":
+    version "2.0.3"
+    resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.3.tgz#c893b73721db73699943bfc3653b1deb7faa4a3a"
+    integrity sha512-Jus9s4CDbqwocc5pOAnh8ShfrnMcPHuJYzVcSUU7lrh8Ni5HuIqX3oilL86p3dlTrk0LzHRCgA/GQ7uNCw6l2Q==
+  
   "@types/multer@^1.4.7":
     version "1.4.7"
     resolved "https://registry.yarnpkg.com/@types/multer/-/multer-1.4.7.tgz#89cf03547c28c7bbcc726f029e2a76a7232cc79e"
@@ -1424,6 +1433,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
     integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
   
+  class-transformer@^0.5.0:
+    version "0.5.0"
+    resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.5.0.tgz#4b599307707dc1c0bb785e995303d59afbed605c"
+    integrity sha512-ONKKYWNXc1IxBqmTeQZCArFryPG/w4ilHd5Mn4Y/NJlkAlAG4UWUcrnPbfSym0eZBr0pj3i0MdZqyxGHCGlCdQ==
+  
   cli-highlight@^2.1.10:
     version "2.1.11"
     resolved "https://registry.yarnpkg.com/cli-highlight/-/cli-highlight-2.1.11.tgz#49736fa452f0aaf4fae580e30acb26828d2dc1bf"
@@ -1704,6 +1718,11 @@ Lockfile:
     integrity sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==
     dependencies:
       webidl-conversions "^5.0.0"
+  
+  dotenv@^10.0.0:
+    version "10.0.0"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+    integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
   
   dotenv@^8.2.0:
     version "8.6.0"
@@ -3366,6 +3385,11 @@ Lockfile:
     version "2.6.0"
     resolved "https://registry.yarnpkg.com/mime/-/mime-2.6.0.tgz#a2a682a95cd4d0cb1d6257e28f83da7e35800367"
     integrity sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==
+  
+  mime@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/mime/-/mime-3.0.0.tgz#b374550dca3a0c18443b0c950a6a58f1931cf7a7"
+    integrity sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==
   
   mimic-fn@^2.1.0:
     version "2.1.0"
