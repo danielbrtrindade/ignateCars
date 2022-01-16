@@ -13,7 +13,7 @@ import { router } from "./routes";
 import { AppError } from "@shared/errors/AppError";
 import upload from "@config/upload";
 
-createConnection('database');
+createConnection();
 const app = express();
 
 app.use(express.json());
